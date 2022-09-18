@@ -15,5 +15,6 @@ You need to change the ei_calloc function to look like:
  >      if(psramFound()){
  >          return ps_calloc(nitems, size);   
  >     } 
- >     return calloc(nitems, size);   
+ >
+ >          return calloc(nitems, size);   
  > } 
