@@ -12,14 +12,9 @@ C:\Users\\_yourname_\Documents\Arduino\libraries\bird_classification_3_inferenci
 You need to change the ei_calloc function to look like:
 
 
->
- > \__attribute__((weak)) void *ei_calloc(size_t nitems, size_t size) {  
- > 
- >      if(psramFound()){
- >      
- >          return ps_calloc(nitems, size);   
- >          
- >     } 
- >
- >          return calloc(nitems, size);   
- > } 
+>    \__attribute__((weak)) void *ei_calloc(size_t nitems, size_t size) {  
+>        if(psramFound()){
+>            return ps_calloc(nitems, size);   
+>                 } 
+>           return calloc(nitems, size);   
+>     } 
