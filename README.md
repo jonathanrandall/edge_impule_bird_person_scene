@@ -11,9 +11,13 @@ If you are going to include your own inferencing model, you need to edit the *ei
 C:\Users\\_yourname_\Documents\Arduino\libraries\bird_classification_3_inferencing\src\edge-impulse-sdk\porting\arduino
 You need to change the ei_calloc function to look like:
 
- > \__attribute__((weak)) void *ei_calloc(size_t nitems, size_t size) {  
+ > \
+ > '__attribute__((weak)) void *ei_calloc(size_t nitems, size_t size) {  
+ > 
  >      if(psramFound()){
+ >      
  >          return ps_calloc(nitems, size);   
+ >          
  >     } 
  >
  >          return calloc(nitems, size);   
